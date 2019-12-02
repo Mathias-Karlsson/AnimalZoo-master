@@ -55,18 +55,6 @@ namespace AnimalZoo
                 allAnimals[i].IntroduceYourself();
                 i = i + 1;
             }
-
-            Animal.currentYear += 1;
-            Console.WriteLine("Current year: " + Animal.currentYear);
-            i = 0;
-            while (i < allAnimals.Length)
-            {
-                // will this work?  should it?
-                Console.WriteLine("Nu kommer " + allAnimals[i].name);
-
-                allAnimals[i].IntroduceYourself();
-                i = i + 1;
-            }
             Console.ReadKey();
         }
     }
