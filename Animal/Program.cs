@@ -43,9 +43,13 @@ namespace AnimalZoo
             vilma.SetFriend(bamse);
             bamse.SetFriend(kurre);
 
+            kurre.AddToy(ball);
+            vilma.AddToy(shoe);
+            bamse.AddToy(mouse);
+
             house.Print();
 
-            Console.WriteLine("Current year: " + Animal.currentYear);
+            Console.WriteLine("Current year: " + Animal.GetCurrentYear());
             i = 0;
             while (i < allAnimals.Length)
             {

@@ -13,11 +13,12 @@ namespace AnimalZoo
         public string name { get; set; }
         public SPECIES species { get; set; }
         public bool canFly { get; set; }
-        public int birthyear { get; set; }
-        private Animal friend { get; set; }
-        private Animal house { get; set; }
+        private int birthyear { get; set; }
+        public Animal friend { get; set; }
+        public House house { get; set; }
+        public Toy toy { get; set; }
 
-        public static int currentYear = 2019;
+        private static int currentYear = 2019;
         public int getAge()
         {
             return currentYear - birthyear;
@@ -33,9 +34,9 @@ namespace AnimalZoo
             friend = animal;
         }
 
-        public void AddAnimal(Animal animal)
+        public void AddToy(Toy animal)
         {
-            house = animal;
+            toy = animal;
         }
 
         public void Print()
@@ -51,10 +52,17 @@ namespace AnimalZoo
             }
         }
 
+        public static int GetCurrentYear()
+        {
+            return currentYear;
+        }
+
         public virtual void IntroduceYourself()
         {
             Console.WriteLine("Morr.Jag är ett djur som heter " + name + ".");
             Console.WriteLine("Jag är " + (currentYear - birthyear) + " år gammal.");
+            Console.WriteLine("Min kompis är " + friend.name);
+            Console.WriteLine("Min leksak är " + toy.GetName());
         }
     }
 
